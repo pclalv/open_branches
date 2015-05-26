@@ -43,13 +43,13 @@ class Location
     hours = @hours[time_now.wday]
 
     if hours["open"] && hours["open"].to_i <= time_now.hour && time_now.hour <= hours["close"].to_i
-      "open!"
+      "open"
     else
-      "closed!"
+      "closed"
     end
   end
 
-  def hours_on(datetime)
+  def hours_at(datetime)
     hour = @hours[datetime.wday]
     hour["open"] ? "open from #{hour["open"]} til #{hour["close"]}" : "closed"
   end
