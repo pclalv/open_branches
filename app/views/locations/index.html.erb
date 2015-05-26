@@ -1,0 +1,11 @@
+<ul>
+
+  <% @locations.each do |loc| %>
+    <li>
+      <a href="locations/<%= loc.slug %>">
+        <%= loc.name %>
+      </a>
+    </li>
+  <% end %>
+
+</ul>

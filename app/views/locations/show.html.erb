@@ -1,0 +1,23 @@
+<% if @offset %>
+  <h2>In <%= @offset %> days, <%= @location.name %> will be <%= @location.open?(@offset) %></h2>
+<% elsif @datetime %>
+  <h2><%= @datetime.strftime("On %m/%d/%Y at %I:%M%p") %>, <%= @location.name %> will be <%= @location.open?(nil, @datetime) %></h2>
+
+  On <%= @datetime.strftime("%m/%d/%Y") %>, <%= @location.name %> will be <%= @location.hours_on(@datetime) %>.
+<% else %>
+  <h2><%= @location.name %> is <%= @location.open? %></h2>
+<% end %>
+
+<form class="offset" action="<%= @location.slug %>" method="get">
+  Look ahead <input type="number" name="offset" value="0" pattern="\d*"> days
+  <button type="submit">Check by offset!</button>
+</form>
+
+Or, check a specific time.
+<form class="timestamp" action="<%= @location.slug %>" method="get">
+  <input type="date" name="date">
+  <input type="time" name="time">
+  <button type="submit">Check by timestamp!</button>
+</form>
+
+<a href="<%= root_url %>">Back to index</a>
