@@ -1,6 +1,6 @@
 # OpenBranches for the NYPL
 
-OpenBranches is a web app for determining a particular NYPL branch's hours built on Ruby on Rails and supported by the NYPL's Locations API.
+OpenBranches is a web app for determining a particular NYPL branch's hours built on Ruby on Rails and supported by the NYPL's Locations API. Currently, OpenBranches only supports regular hours and not special hours, e.g. for holidays. 
 
 ## Running the app locally
 
